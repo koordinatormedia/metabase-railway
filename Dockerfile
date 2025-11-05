@@ -1,8 +1,12 @@
 # Gunakan image resmi Metabase
 FROM metabase/metabase:latest
 
-# Tentukan port default
-ENV PORT=3000
+# Gunakan port dari Railway
+ENV PORT=${PORT:-3000}
+ENV MB_JETTY_PORT=${PORT}
+
+# Tentukan file database default (SQLite)
+ENV MB_DB_FILE=/app/metabase.db
 
 # Jalankan Metabase
-CMD ["java", "-Xmx512m", "-jar", "metabase.jar"]
+CMD ["bash", "-c", "java -Xmx512m -jar metabase.jar"]
