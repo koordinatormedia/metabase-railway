@@ -1,12 +1,8 @@
 {
   "build": {
-    "builder": "DOCKERFILE"
+    "builder": "Docker"
   },
   "deploy": {
-    "numInstances": 1,
-    "restartPolicyType": "ALWAYS",
-    "healthcheckPath": "/",
-    "startCommand": "java -Xmx512m -jar metabase.jar",
-    "port": 3000
+    "startCommand": "java -jar metabase.jar"
   }
 }
