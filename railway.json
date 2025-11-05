@@ -1,0 +1,12 @@
+{
+  "build": {
+    "builder": "DOCKERFILE"
+  },
+  "deploy": {
+    "numInstances": 1,
+    "restartPolicyType": "ALWAYS",
+    "healthcheckPath": "/",
+    "startCommand": "java -Xmx512m -jar metabase.jar",
+    "port": 3000
+  }
+}
