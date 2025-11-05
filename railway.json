@@ -1,8 +1,10 @@
 {
   "build": {
-    "builder": "Docker"
+    "dockerfile": "Dockerfile"
   },
   "deploy": {
-    "startCommand": "java -jar metabase.jar"
+    "startCommand": "java -Xmx512m -jar metabase.jar",
+    "numInstances": 1,
+    "port": 8080
   }
 }
