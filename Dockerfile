@@ -1,12 +1,9 @@
 # Gunakan image resmi Metabase
 FROM metabase/metabase:latest
 
-# Gunakan port dari Railway
-ENV PORT=${PORT:-3000}
-ENV MB_JETTY_PORT=${PORT}
+# Set environment agar cocok dengan Railway
+ENV MB_JETTY_PORT=8080
+ENV PORT=8080
 
-# Tentukan file database default (SQLite)
-ENV MB_DB_FILE=/app/metabase.db
-
-# Jalankan Metabase
-CMD ["bash", "-c", "java -Xmx512m -jar metabase.jar"]
+# Buka port 8080 untuk healthcheck Railway
+EXPOSE 8080
